@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Your Name | Portfolio</title>
+    <title>Your Name | Portfolio & Resume</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Embedded CSS -->
     <style>
@@ -93,21 +93,17 @@
             margin: 40px auto;
         }
 
-        /* About Section */
-        #about {
-            text-align: center;
-            padding: 40px 0;
-        }
-
-        #about h2 {
+        /* Section Titles */
+        section h2 {
             font-size: 2.5rem;
-            margin-bottom: 20px;
+            text-align: center;
+            margin-bottom: 40px;
             position: relative;
             display: inline-block;
             padding-bottom: 10px;
         }
 
-        #about h2::after {
+        section h2::after {
             content: '';
             width: 50px;
             height: 3px;
@@ -116,6 +112,12 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
+        }
+
+        /* About Section */
+        #about {
+            text-align: center;
+            padding: 40px 0;
         }
 
         #about p {
@@ -126,73 +128,109 @@
             color: var(--secondary-color);
         }
 
+        /* Skills Section */
+        #skills {
+            padding: 40px 0;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .skills-list li {
+            list-style: none;
+            background: var(--light-color);
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            color: var(--primary-color);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Experience Section */
+        #experience {
+            padding: 40px 0;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+            border-left: 2px solid var(--primary-color);
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: -9px;
+            width: 16px;
+            height: 16px;
+            background: var(--primary-color);
+            border-radius: 50%;
+        }
+
+        .timeline-item {
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .timeline-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .timeline-item h4 {
+            font-size: 1.1rem;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        .timeline-item p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Education Section */
+        #education {
+            padding: 40px 0;
+        }
+
         /* Projects Section */
         #projects {
             padding: 40px 0;
         }
 
-        #projects h2 {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 40px;
-            position: relative;
-            display: inline-block;
-            padding-bottom: 10px;
+        .project {
+            margin-bottom: 60px;
         }
 
-        #projects h2::after {
-            content: '';
-            width: 50px;
-            height: 3px;
-            background: var(--primary-color);
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
+        .project h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
         }
 
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        .project-details {
+            display: flex;
+            flex-wrap: wrap;
             gap: 20px;
         }
 
-        .project-item {
-            background: var(--light-color);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
+        .project-description {
+            flex: 1;
+            min-width: 300px;
         }
 
-        .project-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .project-image {
-            width: 100%;
-            height: 180px;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .project-content {
-            padding: 20px;
-        }
-
-        .project-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-
-        .project-content p {
+        .project-description p {
             font-size: 1rem;
+            line-height: 1.6;
             color: var(--secondary-color);
             margin-bottom: 15px;
-            line-height: 1.6;
         }
 
-        .project-content a {
+        .project-description a {
             display: inline-block;
             padding: 10px 15px;
             background: var(--primary-color);
@@ -201,9 +239,48 @@
             border-radius: 5px;
             font-weight: 600;
             transition: background 0.3s;
+            margin-right: 10px;
         }
 
-        .project-content a:hover {
+        .project-description a:hover {
+            background: #0b5ed7;
+        }
+
+        .project-images {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+        }
+
+        .project-images img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .project-images img.active {
+            display: block;
+        }
+
+        .image-controls {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .image-controls button {
+            background: var(--primary-color);
+            color: var(--light-color);
+            border: none;
+            padding: 8px 12px;
+            margin: 0 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+
+        .image-controls button:hover {
             background: #0b5ed7;
         }
 
@@ -211,43 +288,65 @@
         #contact {
             text-align: center;
             padding: 40px 0;
-            background: var(--primary-color);
-            color: var(--light-color);
-        }
-
-        #contact h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            position: relative;
-            display: inline-block;
-            padding-bottom: 10px;
-        }
-
-        #contact h2::after {
-            content: '';
-            width: 50px;
-            height: 3px;
-            background: var(--light-color);
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
         }
 
         #contact p {
             font-size: 1.1rem;
             margin-bottom: 30px;
+            color: var(--secondary-color);
         }
 
-        .social-links a {
-            margin: 0 10px;
+        .contact-details {
+            margin-bottom: 30px;
+        }
+
+        .contact-details a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 1.2rem;
+            display: block;
+            margin: 5px 0;
+        }
+
+        .contact-details a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .contact-form button {
+            background: var(--primary-color);
             color: var(--light-color);
-            font-size: 1.5rem;
-            transition: color 0.3s;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s;
         }
 
-        .social-links a:hover {
-            color: #d1e9ff;
+        .contact-form button:hover {
+            background: #0b5ed7;
         }
 
         /* Footer */
@@ -256,6 +355,7 @@
             color: var(--light-color);
             text-align: center;
             padding: 15px 0;
+            margin-top: 40px;
         }
 
         /* Media Queries */
@@ -272,8 +372,12 @@
                 margin: 10px 0;
             }
 
-            .projects-grid {
-                grid-template-columns: 1fr;
+            .project-details {
+                flex-direction: column;
+            }
+
+            .timeline {
+                padding-left: 15px;
             }
         }
     </style>
@@ -289,6 +393,9 @@
     <nav>
         <ul>
             <li><a href="#about">About Me</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -305,62 +412,168 @@
             </p>
         </section>
 
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul class="skills-list">
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript</li>
+                <li>React.js</li>
+                <li>Node.js</li>
+                <li>Express.js</li>
+                <li>MongoDB</li>
+                <li>Git & GitHub</li>
+                <li>RESTful APIs</li>
+                <!-- Add more skills as needed -->
+            </ul>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience">
+            <h2>Experience</h2>
+            <div class="timeline">
+                <!-- Experience Item -->
+                <div class="timeline-item">
+                    <h3>Software Developer Intern</h3>
+                    <h4>XYZ Company | Jan 2023 - Present</h4>
+                    <p>
+                        - Developed web applications using React.js and Node.js.<br>
+                        - Collaborated with a team to design RESTful APIs.<br>
+                        - Improved application performance by 20% through optimization.
+                    </p>
+                </div>
+                <!-- Add more experience items as needed -->
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education">
+            <h2>Education</h2>
+            <div class="timeline">
+                <!-- Education Item -->
+                <div class="timeline-item">
+                    <h3>Bachelor of Science in Computer Science</h3>
+                    <h4>ABC University | 2019 - 2023</h4>
+                    <p>
+                        - Relevant Coursework: Data Structures, Algorithms, Web Development, Database Systems.<br>
+                        - GPA: 3.8/4.0<br>
+                        - Dean's List for 6 semesters.
+                    </p>
+                </div>
+                <!-- Add more education items as needed -->
+            </div>
+        </section>
+
         <!-- Projects Section -->
         <section id="projects">
             <h2>Projects</h2>
-            <div class="projects-grid">
-                <!-- Project Item -->
-                <div class="project-item">
-                    <div class="project-image" style="background-image: url('https://via.placeholder.com/400x200');"></div>
-                    <div class="project-content">
-                        <h3>Project Title 1</h3>
+
+            <!-- Project 1 -->
+            <div class="project">
+                <h3>Project Title 1</h3>
+                <div class="project-details">
+                    <div class="project-description">
                         <p>
-                            Developed a responsive e-commerce web application with real-time payment processing and user authentication.
+                            Developed a responsive e-commerce web application with real-time payment processing and user authentication. Implemented features such as product browsing, shopping cart, and order tracking.
                         </p>
+                        <a href="https://your-live-demo-link.com" target="_blank">Live Demo</a>
                         <a href="https://github.com/yourusername/project1" target="_blank">View on GitHub</a>
                     </div>
+                    <div class="project-images">
+                        <img src="project1-image1.jpg" alt="Project 1 Screenshot 1" class="active">
+                        <img src="project1-image2.jpg" alt="Project 1 Screenshot 2">
+                        <img src="project1-image3.jpg" alt="Project 1 Screenshot 3">
+                        <div class="image-controls">
+                            <button onclick="prevImage(this)">Previous</button>
+                            <button onclick="nextImage(this)">Next</button>
+                        </div>
+                    </div>
                 </div>
-                <!-- Project Item -->
-                <div class="project-item">
-                    <div class="project-image" style="background-image: url('https://via.placeholder.com/400x200');"></div>
-                    <div class="project-content">
-                        <h3>Project Title 2</h3>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project">
+                <h3>Project Title 2</h3>
+                <div class="project-details">
+                    <div class="project-description">
                         <p>
-                            Created a social media platform enabling users to share updates, photos, and interact in real-time.
+                            Created a social media platform enabling users to share updates, photos, and interact in real-time. Integrated real-time notifications and messaging using WebSockets.
                         </p>
+                        <a href="https://your-live-demo-link.com" target="_blank">Live Demo</a>
                         <a href="https://github.com/yourusername/project2" target="_blank">View on GitHub</a>
                     </div>
-                </div>
-                <!-- Project Item -->
-                <div class="project-item">
-                    <div class="project-image" style="background-image: url('https://via.placeholder.com/400x200');"></div>
-                    <div class="project-content">
-                        <h3>Project Title 3</h3>
-                        <p>
-                            Built a data visualization dashboard to display real-time analytics and insights using APIs.
-                        </p>
-                        <a href="https://github.com/yourusername/project3" target="_blank">View on GitHub</a>
+                    <div class="project-images">
+                        <img src="project2-image1.jpg" alt="Project 2 Screenshot 1" class="active">
+                        <img src="project2-image2.jpg" alt="Project 2 Screenshot 2">
+                        <img src="project2-image3.jpg" alt="Project 2 Screenshot 3">
+                        <div class="image-controls">
+                            <button onclick="prevImage(this)">Previous</button>
+                            <button onclick="nextImage(this)">Next</button>
+                        </div>
                     </div>
                 </div>
-                <!-- Add more project items as needed -->
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project">
+                <h3>Project Title 3</h3>
+                <div class="project-details">
+                    <div class="project-description">
+                        <p>
+                            Built a data visualization dashboard to display real-time analytics and insights using APIs. Employed charting libraries to create interactive graphs and charts.
+                        </p>
+                        <a href="https://your-live-demo-link.com" target="_blank">Live Demo</a>
+                        <a href="https://github.com/yourusername/project3" target="_blank">View on GitHub</a>
+                    </div>
+                    <div class="project-images">
+                        <img src="project3-image1.jpg" alt="Project 3 Screenshot 1" class="active">
+                        <img src="project3-image2.jpg" alt="Project 3 Screenshot 2">
+                        <img src="project3-image3.jpg" alt="Project 3 Screenshot 3">
+                        <div class="image-controls">
+                            <button onclick="prevImage(this)">Previous</button>
+                            <button onclick="nextImage(this)">Next</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add more projects as needed -->
+
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p>
+                I'm currently open to new opportunities and collaborations. Feel free to reach out to me through the form below or via email and social media.
+            </p>
+
+            <!-- Contact Details -->
+            <div class="contact-details">
+                <a href="mailto:your.email@example.com"><i class="fas fa-envelope"></i> your.email@example.com</a>
+                <a href="tel:+1234567890"><i class="fas fa-phone"></i> +1 (234) 567-890</a>
+                <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn Profile</a>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <form id="contact-form">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+
+                    <button type="submit">Send Message</button>
+                </form>
             </div>
         </section>
 
     </div>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Get In Touch</h2>
-        <p>
-            I'm currently open to new opportunities and collaborations. Feel free to reach out!
-        </p>
-        <div class="social-links">
-            <a href="mailto:your.email@example.com" target="_blank"><i class="fas fa-envelope"></i></a>
-            <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-            <!-- Add more social links as needed -->
-        </div>
-    </section>
 
     <!-- Footer -->
     <footer>
@@ -368,7 +581,8 @@
     </footer>
 
     <!-- Embedded JavaScript -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
     <script>
         // Smooth Scrolling for Anchor Links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -378,6 +592,46 @@
                     behavior: 'smooth'
                 });
             });
+        });
+
+        // Image Slider Functionality
+        function nextImage(button) {
+            const imagesContainer = button.closest('.project-images');
+            const images = imagesContainer.querySelectorAll('img');
+            let currentIndex = Array.from(images).findIndex(img => img.classList.contains('active'));
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].classList.add('active');
+        }
+
+        function prevImage(button) {
+            const imagesContainer = button.closest('.project-images');
+            const images = imagesContainer.querySelectorAll('img');
+            let currentIndex = Array.from(images).findIndex(img => img.classList.contains('active'));
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            images[currentIndex].classList.add('active');
+        }
+
+        // Contact Form Submission
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Get form data
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            // Simple validation
+            if (name && email && message) {
+                // Here you can integrate with a third-party service like EmailJS or Formspree
+                // For now, we'll just display an alert
+                alert('Thank you for your message, ' + name + '! I will get back to you soon.');
+                // Reset the form
+                document.getElementById('contact-form').reset();
+            } else {
+                alert('Please fill in all fields.');
+            }
         });
     </script>
 </body>
