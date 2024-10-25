@@ -2,8 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Jevin | Resume</title>
+    <title>Jevin Thakar | Portfolio & Resume</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Meta Tags for SEO -->
+    <meta name="description" content="Jevin Thakar's professional portfolio showcasing skills, projects, certifications, and contact information.">
+    <meta name="keywords" content="Jevin Thakar, Portfolio, Full Stack Developer, Projects, Skills, Contact, Certifications">
     <!-- Embedded CSS -->
     <style>
         /* Google Fonts */
@@ -52,6 +55,15 @@
 
         header p {
             font-size: 1.2rem;
+        }
+
+        header .summary {
+            font-size: 1rem;
+            margin-top: 15px;
+            color: var(--light-color);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         /* Navigation Bar */
@@ -148,10 +160,39 @@
             font-weight: 600;
             color: var(--primary-color);
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s, color 0.3s;
         }
 
-        /* Experience Section */
-        #experience {
+        .skills-list li:hover {
+            background: var(--primary-color);
+            color: var(--light-color);
+            cursor: default;
+        }
+
+        /* Certifications Section */
+        #certifications {
+            padding: 40px 0;
+        }
+
+        .certifications-list {
+            list-style: none;
+            padding: 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .certifications-list li {
+            background: var(--light-color);
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            font-size: 1rem;
+            color: var(--text-color);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Education Section */
+        #education {
             padding: 40px 0;
         }
 
@@ -190,11 +231,6 @@
         .timeline-item p {
             font-size: 1rem;
             line-height: 1.6;
-        }
-
-        /* Education Section */
-        #education {
-            padding: 40px 0;
         }
 
         /* Projects Section */
@@ -238,12 +274,13 @@
             text-decoration: none;
             border-radius: 5px;
             font-weight: 600;
-            transition: background 0.3s;
+            transition: background 0.3s, transform 0.3s;
             margin-right: 10px;
         }
 
         .project-description a:hover {
             background: #0b5ed7;
+            transform: translateY(-2px);
         }
 
         .project-images {
@@ -297,56 +334,28 @@
         }
 
         .contact-details {
-            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .contact-details a {
-            color: var(--primary-color);
+            color: var(--text-color);
             text-decoration: none;
             font-size: 1.2rem;
-            display: block;
-            margin: 5px 0;
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-details a i {
+            margin-right: 10px;
+            font-size: 1.5rem;
+            color: var(--primary-color);
         }
 
         .contact-details a:hover {
-            text-decoration: underline;
-        }
-
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-            text-align: left;
-        }
-
-        .contact-form label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: 600;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ced4da;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-
-        .contact-form button {
-            background: var(--primary-color);
-            color: var(--light-color);
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: background 0.3s;
-        }
-
-        .contact-form button:hover {
-            background: #0b5ed7;
+            color: var(--primary-color);
         }
 
         /* Footer */
@@ -387,6 +396,9 @@
     <header>
         <h1>Jevin Thakar</h1>
         <p>Full Stack Developer | Problem Solver | Tech Enthusiast</p>
+        <p class="summary">
+            Aspiring full stack developer with a strong foundation in web technologies and a passion for creating efficient and user-friendly applications. Seeking opportunities to contribute and grow in a dynamic tech environment.
+        </p>
     </header>
 
     <!-- Navigation Bar -->
@@ -394,7 +406,7 @@
         <ul>
             <li><a href="#about">About Me</a></li>
             <li><a href="#skills">Skills</a></li>
-            <li><a href="#experience">Experience</a></li>
+            <li><a href="#certifications">Activities</a></li>
             <li><a href="#education">Education</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -408,7 +420,7 @@
         <section id="about">
             <h2>About Me</h2>
             <p>
-                I am a dedicated and efficient full stack developer with a passion for building scalable web applications and working across the full stack. Proficient in modern technologies like JavaScript, React, Node.js, and more. I enjoy turning complex problems into simple, beautiful, and intuitive designs.
+                I am a dedicated and efficient full stack developer with a passion for building scalable web applications. Proficient in modern technologies, I enjoy turning complex problems into simple, beautiful, and intuitive designs. With a keen interest in continuous learning, I'm always exploring new technologies and frameworks to enhance my skill set.
             </p>
         </section>
 
@@ -416,35 +428,28 @@
         <section id="skills">
             <h2>Skills</h2>
             <ul class="skills-list">
-                <li>HTML5</li>
-                <li>CSS3</li>
+                <li>HTML</li>
+                <li>CSS</li>
                 <li>JavaScript</li>
-                <li>React.js</li>
-                <li>Node.js</li>
-                <li>Express.js</li>
-                <li>MongoDB</li>
-                <li>Git & GitHub</li>
-                <li>RESTful APIs</li>
+                <li>SQL</li>
+                <li>Adobe Photoshop</li>
+                <li>Adobe Premiere</li>
+                <li>Microsoft Office</li>
+                <li>Troubleshooting</li>
+                <li>Hardware & Software Installations</li>
                 <!-- Add more skills as needed -->
             </ul>
         </section>
 
-        <!-- Experience Section -->
-        <section id="experience">
-            <h2>Experience</h2>
-            <div class="timeline">
-                <!-- Experience Item -->
-                <div class="timeline-item">
-                    <h3>Software Developer Intern</h3>
-                    <h4>XYZ Company | Jan 2023 - Present</h4>
-                    <p>
-                        - Developed web applications using React.js and Node.js.<br>
-                        - Collaborated with a team to design RESTful APIs.<br>
-                        - Improved application performance by 20% through optimization.
-                    </p>
-                </div>
-                <!-- Add more experience items as needed -->
-            </div>
+        <!-- Certifications Section -->
+        <section id="certifications">
+            <h2>Activities</h2>
+            <ul class="certifications-list">
+                <li>Certified JavaScript Developer - XYZ Institute</li>
+                <li>"2d Modeling in Blender" course on Coursera</li>
+                <li>Hackathon 2023 at Apollo Institute of Engineering and Technology</li>
+                <!-- Add more certifications or achievements -->
+            </ul>
         </section>
 
         <!-- Education Section -->
@@ -453,12 +458,12 @@
             <div class="timeline">
                 <!-- Education Item -->
                 <div class="timeline-item">
-                    <h3>Bachelor of Science in Computer Science</h3>
-                    <h4>ABC University | 2019 - 2023</h4>
+                    <h3>Bachelor of Engineering in Computer Engineering</h3>
+                    <h4>Apollo Institute of Engineering and Technology | 2020 - 2023</h4>
                     <p>
-                        - Relevant Coursework: Data Structures, Algorithms, Web Development, Database Systems.<br>
-                        - GPA: 3.8/4.0<br>
-                        - Dean's List for 6 semesters.
+                        - Relevant Coursework: Data Structures, Algorithms, Web Development, Database Systems, Machine and Assembly Language<br>
+                        - GPA: [Your GPA, if applicable]<br>
+                        - Activities: Member of the Coding Club, Participated in inter-college tech fests
                     </p>
                 </div>
                 <!-- Add more education items as needed -->
@@ -471,19 +476,19 @@
 
             <!-- Project 1 -->
             <div class="project">
-                <h3>Project Title 1</h3>
+                <h3>Mum's Kitchen</h3>
                 <div class="project-details">
                     <div class="project-description">
                         <p>
-                            Developed a responsive e-commerce web application with real-time payment processing and user authentication. Implemented features such as product browsing, shopping cart, and order tracking.
+                            Developed a responsive e-commerce web application for a local food business. Implemented features such as product browsing, shopping cart, user authentication, and real-time payment processing. Focused on creating an intuitive user interface and seamless user experience.
                         </p>
-                        <a href="https://your-live-demo-link.com" target="_blank">Live Demo</a>
-                        <a href="https://github.com/yourusername/project1" target="_blank">View on GitHub</a>
+                        <p><strong>Technologies Used:</strong> HTML, CSS, JavaScript, SQL</p>
+                        <a href="https://mumskitchens.com/" target="_blank">Live Demo</a>
                     </div>
                     <div class="project-images">
-                        <img src="project1-image1.jpg" alt="Project 1 Screenshot 1" class="active">
-                        <img src="project1-image2.jpg" alt="Project 1 Screenshot 2">
-                        <img src="project1-image3.jpg" alt="Project 1 Screenshot 3">
+                        <img src="project1-image1.jpg" alt="Mum's Kitchen Screenshot 1" class="active">
+                        <img src="project1-image2.jpg" alt="Mum's Kitchen Screenshot 2">
+                        <img src="project1-image3.jpg" alt="Mum's Kitchen Screenshot 3">
                         <div class="image-controls">
                             <button onclick="prevImage(this)">Previous</button>
                             <button onclick="nextImage(this)">Next</button>
@@ -494,42 +499,19 @@
 
             <!-- Project 2 -->
             <div class="project">
-                <h3>Project Title 2</h3>
+                <h3>Diamore</h3>
                 <div class="project-details">
                     <div class="project-description">
                         <p>
-                            Created a social media platform enabling users to share updates, photos, and interact in real-time. Integrated real-time notifications and messaging using WebSockets.
+                            Designed and developed a website for a jewelry brand, showcasing their products with high-quality images and detailed descriptions. Integrated contact forms and optimized the site for search engines to increase online visibility.
                         </p>
-                        <a href="https://your-live-demo-link.com" target="_blank">Live Demo</a>
-                        <a href="https://github.com/yourusername/project2" target="_blank">View on GitHub</a>
+                        <p><strong>Technologies Used:</strong> HTML, CSS, JavaScript, Adobe Photoshop</p>
+                        <a href="https://thediamore.com/" target="_blank">Live Demo</a>
                     </div>
                     <div class="project-images">
-                        <img src="project2-image1.jpg" alt="Project 2 Screenshot 1" class="active">
-                        <img src="project2-image2.jpg" alt="Project 2 Screenshot 2">
-                        <img src="project2-image3.jpg" alt="Project 2 Screenshot 3">
-                        <div class="image-controls">
-                            <button onclick="prevImage(this)">Previous</button>
-                            <button onclick="nextImage(this)">Next</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 3 -->
-            <div class="project">
-                <h3>Project Title 3</h3>
-                <div class="project-details">
-                    <div class="project-description">
-                        <p>
-                            Built a data visualization dashboard to display real-time analytics and insights using APIs. Employed charting libraries to create interactive graphs and charts.
-                        </p>
-                        <a href="https://your-live-demo-link.com" target="_blank">Live Demo</a>
-                        <a href="https://github.com/yourusername/project3" target="_blank">View on GitHub</a>
-                    </div>
-                    <div class="project-images">
-                        <img src="project3-image1.jpg" alt="Project 3 Screenshot 1" class="active">
-                        <img src="project3-image2.jpg" alt="Project 3 Screenshot 2">
-                        <img src="project3-image3.jpg" alt="Project 3 Screenshot 3">
+                        <img src="project2-image1.jpg" alt="Diamore Screenshot 1" class="active">
+                        <img src="project2-image2.jpg" alt="Diamore Screenshot 2">
+                        <img src="project2-image3.jpg" alt="Diamore Screenshot 3">
                         <div class="image-controls">
                             <button onclick="prevImage(this)">Previous</button>
                             <button onclick="nextImage(this)">Next</button>
@@ -539,37 +521,21 @@
             </div>
 
             <!-- Add more projects as needed -->
-
         </section>
 
         <!-- Contact Section -->
         <section id="contact">
             <h2>Contact Me</h2>
             <p>
-                I'm currently open to new opportunities and collaborations. Feel free to reach out to me through the form below or via email and social media.
+                I'm excited to connect with you! Feel free to reach out through any of the platforms below.
             </p>
 
             <!-- Contact Details -->
             <div class="contact-details">
-                <a href="mailto:your.email@example.com"><i class="fas fa-envelope"></i> your.email@example.com</a>
-                <a href="tel:+1234567890"><i class="fas fa-phone"></i> +1 (234) 567-890</a>
-                <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn Profile</a>
-            </div>
-
-            <!-- Contact Form -->
-            <div class="contact-form">
-                <form id="contact-form">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
-
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
-
-                    <button type="submit">Send Message</button>
-                </form>
+                <a href="mailto:heyben1947@gmail.com"><i class="fas fa-envelope"></i> heyben1947@gmail.com</a>
+                <a href="tel:+918154880707"><i class="fas fa-phone"></i> +91 8154880707</a>
+                <a href="https://www.linkedin.com/in/jevin-thakar-628871135/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn Profile</a>
+                <!-- Add more social links if available -->
             </div>
         </section>
 
@@ -577,7 +543,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2023 Your Name. All rights reserved.</p>
+        <p>&copy; 2023 Jevin Thakar. All rights reserved.</p>
     </footer>
 
     <!-- Embedded JavaScript -->
@@ -612,27 +578,6 @@
             currentIndex = (currentIndex - 1 + images.length) % images.length;
             images[currentIndex].classList.add('active');
         }
-
-        // Contact Form Submission
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent default form submission
-
-            // Get form data
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const message = document.getElementById('message').value.trim();
-
-            // Simple validation
-            if (name && email && message) {
-                // Here you can integrate with a third-party service like EmailJS or Formspree
-                // For now, we'll just display an alert
-                alert('Thank you for your message, ' + name + '! I will get back to you soon.');
-                // Reset the form
-                document.getElementById('contact-form').reset();
-            } else {
-                alert('Please fill in all fields.');
-            }
-        });
     </script>
 </body>
 </html>
