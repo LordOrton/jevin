@@ -75,6 +75,25 @@
             z-index: 1000;
         }
 
+        /* Hamburger Menu Styles */
+        .menu-btn {
+            display: none;
+        }
+
+        .menu-icon {
+            display: none;
+            cursor: pointer;
+            padding: 15px;
+        }
+
+        .menu-icon div {
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-color);
+            margin: 5px 0;
+            transition: 0.4s;
+        }
+
         nav ul {
             display: flex;
             justify-content: center;
@@ -373,8 +392,20 @@
                 font-size: 2.5rem;
             }
 
+            /* Hide the default nav and display hamburger menu */
             nav ul {
                 flex-direction: column;
+                display: none;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+
+            /* Show menu when checkbox is checked */
+            .menu-btn:checked + .menu-icon + ul {
+                display: flex;
+				padding: 10px;
             }
 
             nav ul li {
@@ -403,6 +434,13 @@
 
     <!-- Navigation Bar -->
     <nav>
+        <!-- Hidden Checkbox for Hamburger Menu Control -->
+        <input type="checkbox" id="menu-btn" class="menu-btn">
+        <label for="menu-btn" class="menu-icon">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
         <ul>
             <li><a href="#about">About Me</a></li>
             <li><a href="#skills">Skills</a></li>
@@ -445,8 +483,7 @@
         <section id="certifications">
             <h2>Activities</h2>
             <ul class="certifications-list">
-                <li>Certified JavaScript Developer - XYZ Institute</li>
-                <li>"2d Modeling in Blender" course on Coursera</li>
+                <li>"2D Modeling in Blender" course on Coursera</li>
                 <li>Hackathon 2023 at Apollo Institute of Engineering and Technology</li>
                 <!-- Add more certifications or achievements -->
             </ul>
@@ -462,7 +499,7 @@
                     <h4>Apollo Institute of Engineering and Technology | 2020 - 2023</h4>
                     <p>
                         - Relevant Coursework: Data Structures, Algorithms, Web Development, Database Systems, Machine and Assembly Language<br>
-                        - GPA: [Your GPA, if applicable]<br>
+                        <!-- - GPA: [Your GPA, if applicable]<br> -->
                         - Activities: Member of the Coding Club, Participated in inter-college tech fests
                     </p>
                 </div>
